@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Home from './pages/home/Home';
+import './assets/styles/base.scss';
+import ProductsList from './pages/products-list/ProductsList';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ProductsList />
   </React.StrictMode>,
   document.getElementById('root')
 );

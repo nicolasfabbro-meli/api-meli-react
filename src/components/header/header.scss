@@ -1,0 +1,51 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/helpers';
+
+header {
+  background-color: $brand-color;
+}
+
+.header {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  @extend .container;
+
+  &__left {
+    width: 200px;
+    height: 100%;
+  }
+
+  &__center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+  }
+
+  &__right {}
+
+  &__link {
+    display: inline-block;
+    height: 100%;
+  }
+
+  &__logo {
+    height: 100%;
+  }
+
+  &__input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    width: 500px;
+  }
+
+  &__icon-search {
+    display: flex;
+    padding: 0 10px;
+    cursor: pointer;
+  }
+}
