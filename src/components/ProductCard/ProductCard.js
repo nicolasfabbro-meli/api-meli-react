@@ -5,10 +5,6 @@ import './product-card.scss';
 import { getCurrencySymbol } from '../../utils';
 
 class ProductCard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { product } = this.props;
     return (
@@ -32,6 +28,19 @@ class ProductCard extends React.Component {
       </a>
     );
   }
+}
+
+ProductCard.propTypes = {
+  product: PropTypes.shape({
+    permalink: PropTypes.string,
+    thumbnail: PropTypes.string,
+    title: PropTypes.string,
+    currency_id: PropTypes.string,
+    price: PropTypes.number,
+    shipping: PropTypes.shape({
+      free_shipping: PropTypes.bool,
+    }),
+  }).isRequired,
 }
 
 export default ProductCard;

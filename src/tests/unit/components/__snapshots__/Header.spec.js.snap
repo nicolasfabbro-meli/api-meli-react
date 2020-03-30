@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag Should match snapshot 1`] = `
+"<header>
+  <div className='header'>
+    <div className='header__left'>
+      <a href='https://mercadolibre.com.ar' className='header__link' target='_blank' rel='noopener noreferrer'>
+        <img src='logo__large.png' alt='Mercadolibre' className='header__logo' />
+      </a>
+    </div>
+    <div className='header__center'>
+      <input type='text' placeholder='Buscar productos, marcas y mas...' className='header__input' onKeyDown={[Function]} />
+      <div className='v-divider' />
+      <span className='header__icon-search' role='button' onClick={[Function]}>
+        <ion-icon name='search-outline' />
+      </span>
+    </div>
+    <div className='header__right' />
+  </div>
+</header>"
+`;

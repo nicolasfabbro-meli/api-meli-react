@@ -1,18 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './products-list.scss';
-import Header from '../../components/header';
+import Header from '../../components/Header';
 import MeliService from '../../services/meli';
-import ProductCard from '../../components/product-card';
-import Tag from '../../components/tag';
+import ProductCard from '../../components/ProductCard';
+import Tag from '../../components/Tag';
 import { saveSearch, removeSavedSearch } from '../../utils';
 import { uuid } from 'uuidv4';
 
 const meliService = new MeliService();
 
 class ProductsList extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       results: [],
       searchTerms: '',
@@ -45,7 +44,7 @@ class ProductsList extends React.Component {
       <React.Fragment>
         <Header handleSearch={this.handleSearch} />
         <div className="page">
-          {lastSearches.length ? (
+          {lastSearches && lastSearches.length ? (
             <React.Fragment>
               <p>Tus últimas búsquedas fueron:</p>
               <div className="last-searches">

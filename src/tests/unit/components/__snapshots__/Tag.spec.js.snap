@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag Should match snapshot 1`] = `
+"<span className='tag'>
+  <span onClick={[Function: onClick]}>
+    __TEST__
+  </span>
+  <ion-icon name='close-outline' onClick={[Function: onClick]} />
+</span>"
+`;

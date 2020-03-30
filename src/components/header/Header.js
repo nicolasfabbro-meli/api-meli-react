@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './header.scss';
 import Logo from '../../assets/images/logo__large.png';
 
@@ -11,20 +11,17 @@ class Header extends React.Component {
     };
   }
 
-  handleClick = () => {
-    const { handleSearch } = this.props;
-    const { searchTerms } = this.state;
-    handleSearch(searchTerms);
-  }
-
   setSearchTerms = (e) => {
     e.persist();
     const { handleSearch } = this.props;    
     this.setState({
-      searchTerms: e.target.value,
+      searchTerms: this.searchInput.value,
     }, () => {
       const { searchTerms } = this.state;
-      if(e.keyCode === 13){
+      if(
+        e.type === 'click' ||
+        (e.type === 'keydown' && e.keyCode === 13)
+      ){
         handleSearch(searchTerms)
       }
     });
@@ -46,13 +43,14 @@ class Header extends React.Component {
           </div>
           <div className="header__center">
             <input
+              ref={(el) => { this.searchInput = el; }}
               type="text"
               placeholder="Buscar productos, marcas y mas..."
               className="header__input"
               onKeyDown={this.setSearchTerms}
             />
             <div className="v-divider"></div>
-            <span className="header__icon-search" role="button" onClick={this.handleClick}>
+            <span className="header__icon-search" role="button" onClick={this.setSearchTerms}>
               <ion-icon name="search-outline" />
             </span>
           </div>
@@ -63,6 +61,8 @@ class Header extends React.Component {
   }
 }
 
-// Header.PropTypes = {}
+Header.propTypes = {
+  handleSearch: PropTypes.func.isRequired,
+}
 
 export default Header;

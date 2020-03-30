@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCard Should match snapshot 1`] = `
+"<a href='__LINK__' className='product-card'>
+  <div className='product-card__image'>
+    <img src='__IMAGE__' alt='__TITLE__' />
+  </div>
+  <div className='product-card__info'>
+    <span className='product-card__price'>
+      __CURRENCY_ID__
+       
+      999
+    </span>
+    <span className='product-card__shipping product-card__shipping--hidden'>
+      Envío gratis
+    </span>
+    <span className='product-card__title'>
+      __TITLE__
+    </span>
+  </div>
+</a>"
+`;
