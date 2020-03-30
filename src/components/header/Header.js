@@ -13,18 +13,20 @@ class Header extends React.Component {
 
   setSearchTerms = (e) => {
     e.persist();
-    const { handleSearch } = this.props;
-    this.setState({
-      searchTerms: this.searchInput.value,
-    }, () => {
-      const { searchTerms } = this.state;
-      if (
-        e.type === 'click' ||
-        (e.type === 'keydown' && e.keyCode === 13)
-      ) {
-        handleSearch(searchTerms)
-      }
-    });
+    if (this.searchInput.value) {
+      const { handleSearch } = this.props;
+      this.setState({
+        searchTerms: this.searchInput.value,
+      }, () => {
+        const { searchTerms } = this.state;
+        if (
+          e.type === 'click' ||
+          (e.type === 'keydown' && e.keyCode === 13)
+        ) {
+          handleSearch(searchTerms)
+        }
+      });
+    }
   }
 
   render() {
