@@ -10,8 +10,8 @@ body {
 }
 
 .page {
-  @extend .container;
-
+  padding: 0 15px;
+  
   &__empty-search {
     margin: 50px 0;
     background-color: #fff;

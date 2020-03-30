@@ -13,15 +13,15 @@ class Header extends React.Component {
 
   setSearchTerms = (e) => {
     e.persist();
-    const { handleSearch } = this.props;    
+    const { handleSearch } = this.props;
     this.setState({
       searchTerms: this.searchInput.value,
     }, () => {
       const { searchTerms } = this.state;
-      if(
+      if (
         e.type === 'click' ||
         (e.type === 'keydown' && e.keyCode === 13)
-      ){
+      ) {
         handleSearch(searchTerms)
       }
     });
@@ -42,16 +42,18 @@ class Header extends React.Component {
             </a>
           </div>
           <div className="header__center">
-            <input
-              ref={(el) => { this.searchInput = el; }}
-              type="text"
-              placeholder="Buscar productos, marcas y mas..."
-              className="header__input"
-              onKeyDown={this.setSearchTerms}
-            />
-            <div className="v-divider"></div>
-            <span className="header__icon-search" role="button" onClick={this.setSearchTerms}>
-              <ion-icon name="search-outline" />
+            <span className="header__search-input-container">
+              <input
+                ref={(el) => { this.searchInput = el; }}
+                type="text"
+                placeholder="Buscar productos, marcas y mas..."
+                className="header__input"
+                onKeyDown={this.setSearchTerms}
+              />
+              <div className="v-divider"></div>
+              <span className="header__icon-search" role="button" onClick={this.setSearchTerms}>
+                <ion-icon name="search-outline" />
+              </span>
             </span>
           </div>
           <div className="header__right"></div>

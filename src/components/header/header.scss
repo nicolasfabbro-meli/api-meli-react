@@ -6,22 +6,34 @@ header {
 }
 
 .header {
-  height: 30px;
+  height: auto;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   padding: 10px 0;
   @extend .container;
 
+  @media (min-width: 768px) {
+    height: 30px;
+    flex-direction: row;
+    align-items: center;
+  }
+
   &__left {
-    width: 200px;
-    height: 100%;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    @media (min-width: 768px) {
+      width: 200px;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
   }
 
   &__center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
+    padding: 0 15px;
+    @media (min-width: 768px) {
+      padding: 0;
+    }
   }
 
   &__right {}
@@ -32,7 +44,11 @@ header {
   }
 
   &__logo {
-    height: 100%;
+    width: 100px;
+    @media (min-width: 768px) {
+      width: auto;
+      height: 100%;
+    }
   }
 
   &__input {
@@ -47,5 +63,12 @@ header {
     display: flex;
     padding: 0 10px;
     cursor: pointer;
+  }
+
+  &__search-input-container {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
