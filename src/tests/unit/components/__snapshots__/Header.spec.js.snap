@@ -9,10 +9,12 @@ exports[`Tag Should match snapshot 1`] = `
       </a>
     </div>
     <div className='header__center'>
-      <input type='text' placeholder='Buscar productos, marcas y mas...' className='header__input' onKeyDown={[Function]} />
-      <div className='v-divider' />
-      <span className='header__icon-search' role='button' onClick={[Function]}>
-        <ion-icon name='search-outline' />
+      <span className='header__search-input-container'>
+        <input type='text' placeholder='Buscar productos, marcas y mas...' className='header__input' onKeyDown={[Function]} />
+        <div className='v-divider' />
+        <span className='header__icon-search' role='button' onClick={[Function]}>
+          <ion-icon name='search-outline' />
+        </span>
       </span>
     </div>
     <div className='header__right' />

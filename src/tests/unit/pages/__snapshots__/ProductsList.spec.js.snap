@@ -3,9 +3,11 @@
 exports[`ProductsList page Should render 1`] = `
 "<Fragment>
   <Header handleSearch={[Function]} />
-  <div className='page'>
-    <div className='page__empty-search'>
-      Realiza una búsqueda para comenzar a comprar!
+  <div className='container'>
+    <div className='page'>
+      <div className='page__empty-search'>
+        Realiza una búsqueda para comenzar a comprar!
+      </div>
     </div>
   </div>
 </Fragment>"
